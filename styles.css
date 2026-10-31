@@ -69,8 +69,8 @@ input.input-error{
 
 .hidden-text{
     position: absolute;
-    width: 1px;
-    height: 1px;
+    width: 0.06rem;
+    height: 0.06rem;
     overflow: hidden;
     clip-path: inset(50%);
     white-space: nowrap;
