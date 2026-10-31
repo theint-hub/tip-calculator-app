@@ -7,7 +7,6 @@ My solution to the [Tip calculator app challenge on Frontend Mentor](https://www
 - [Overview](#overview)
 - [Links](#links)
 - [Built with](#built-with)
-- [What I learned](#what-i-learned)
 - [Notes](#notes)
 - [Author](#author)
 
@@ -36,15 +35,6 @@ Users can:
 - Mobile-first workflow with a `min-width` media query and `rem` units
 - Vanilla JavaScript
 - Google Fonts (Space Mono)
-
-## What I learned
-
-- **One calculation function:** a single `calculate()` function reads the bill, tip and number of people, and every input and button handler calls it, so the results never go out of sync.
-- **Working with input values:** input values are strings, so I converted them with `Number()` before the math, formatted the results with `toFixed(2)`, and used `Math.max(0, ...)` to block negative tips.
-- **Grid and form controls:** an `<input>` has a built-in minimum width that stretched my grid columns. Using `minmax(0, 1fr)` and `min-width: 0` fixed it.
-- **Grouping and accessibility:** I used a `fieldset` and `legend` for the tip buttons, `aria-describedby` and `aria-invalid` for the error message, and `aria-live` so screen readers hear the totals change.
-- **Toggling states with classes:** an `active` class marks the selected tip button, and the `disabled` attribute controls the RESET button.
-- **Input icons:** the `$` and person icons are `background-image` on the inputs, and I used `background-color` so the shorthand did not wipe them.
 
 ## Notes
 
