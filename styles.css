@@ -67,6 +67,15 @@ input.input-error{
     border-color: var(--error);
 }
 
+.hidden-text{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
 .logo-section{
     display: flex;
     align-items: center;
@@ -125,7 +134,7 @@ input.input-error{
     border-radius: 8px;
 }
 
-.buttons button:not(.active):hover{
+.buttons button:hover{
     background: var(--accent-light);
     color: var(--dark-green);
 }
@@ -204,13 +213,13 @@ input.input-error{
     font-weight: 700;
 }
 
-.reset-btn:hover:not(:disabled){
-    background-color: var(--accent-light);
-}
-
 .reset-btn:disabled{
     opacity: 0.2;
     cursor: not-allowed;
+}
+
+.reset-btn:hover:not(:disabled){
+    background-color: var(--accent-light);
 }
 
 @media (min-width: 49rem){
