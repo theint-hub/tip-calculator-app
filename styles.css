@@ -1,0 +1,251 @@
+:root{
+    --accent: hsl(172, 67%, 45%);
+    --dark-green: hsl(183, 100%, 15%);   
+    --text-muted: hsl(186, 14%, 43%);
+    --text-subtle: hsl(184, 14%, 56%);
+    --page-bg: hsl(185, 41%, 84%);
+    --input-bg: hsl(189, 47%, 97%);
+    --white: hsl(0, 0%, 100%);
+    --accent-light: hsl(173, 61%, 74%);
+    --error: hsl(13, 70%, 58%);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: var(--page-bg);
+    font-family: "Space Mono", monospace;
+}
+
+button,input{
+    font: inherit;
+}
+
+button{
+    cursor: pointer;
+}
+
+fieldset{
+    border: none;
+    min-width: 0;
+}
+
+label,legend{
+    padding-bottom: 0.3rem;
+    color: var(--text-muted);
+    font-size: 1rem;
+}
+
+input{
+    padding: 1rem;
+    border: 2px solid var(--white);
+    border-radius: 8px;
+    background-color: var(--input-bg);
+    font-size: 1.5rem;
+    text-align: right;
+    font-weight: 700;
+    color: var(--dark-green);
+    outline: none;
+}
+
+input::placeholder{
+    color: var(--text-subtle);
+}
+
+input:focus{
+    border-color: var(--accent);
+}
+
+input.input-error{
+    border-color: var(--error);
+}
+
+.logo-section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem; 
+}
+
+.bill-section{
+    flex: 1;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+    background: var(--white);
+    font-weight: 700;   
+    padding: 1.5rem;
+}
+
+.bill-input,
+.tip,
+.people{
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+}
+
+.amount{
+    display: flex;
+    flex-direction: column;
+}
+
+.input-dollar{
+    background-image: url(assets/icon-dollar.svg);
+    background-repeat: no-repeat;
+    background-position: left 1rem center;
+}
+
+.input-person{
+    background-image: url(assets/icon-person.svg);
+    background-repeat: no-repeat;
+    background-position: left 1rem center;
+}
+
+.buttons{
+    display: grid;
+    grid-template-columns: repeat(2,minmax(0,1fr));
+    gap: 0.5rem;
+    padding: 1.3rem 0;
+}
+
+.buttons button{
+    padding: 0.8rem;
+    border: none;
+    background-color: var(--dark-green);
+    color: var(--white);
+    font-size: 1.5rem;
+    font-weight: 700;
+    border-radius: 8px;
+}
+
+.buttons button:not(.active):hover{
+    background: var(--accent-light);
+    color: var(--dark-green);
+}
+
+.buttons button.active{
+    background: var(--accent);
+    color: var(--dark-green);
+}
+
+.custom{
+    padding: 0.8rem;
+    width: 100%;
+    min-width: 0;
+}
+
+.custom::placeholder{
+    color: var(--text-muted);
+}
+
+.custom:placeholder-shown{
+    text-align: center;
+}
+
+.numOfPeople-label{
+    display: flex;
+    justify-content: space-between;
+}
+
+.error-message{
+    color: var(--error);
+    font-size: 1rem;
+}
+
+.total-amount{
+    background: var(--dark-green);
+    padding: 1.25rem 1rem;
+    border-radius: 12px;
+}
+
+.tip-amount,.total{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0.75rem 0.5rem;
+}
+
+.result-title,.person{
+    display: block;
+    font-weight: 700;
+}
+
+.result-title{
+    color: var(--white);
+    font-size: 1rem;
+}
+
+.person{
+    color: var(--text-subtle);
+    font-size: 0.8rem;
+}
+
+.amount-num{
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent);
+}
+
+.reset-btn{
+    width: 100%;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border-radius: 6px;
+    border: none;
+    background: var(--accent);
+    color: var(--dark-green);
+    font-weight: 700;
+}
+
+.reset-btn:hover:not(:disabled){
+    background-color: var(--accent-light);
+}
+
+.reset-btn:disabled{
+    opacity: 0.2;
+    cursor: not-allowed;
+}
+
+@media (min-width: 49rem){
+    body{
+        justify-content: center;
+    }
+
+    .bill-section{
+        flex: none;
+        display: grid;
+        grid-template-columns: 1fr 25rem;
+        border-radius: 1.5rem;
+        gap: 3rem;
+        width: 100%;
+        margin: 0 auto;
+        max-width: 57.5rem;
+        padding: 2rem;
+    }
+
+    .buttons{
+        grid-template-columns: repeat(3,minmax(0,1fr));
+    }
+
+    .total-amount{
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        padding: 2rem 1.5rem;
+    }
+
+    .amount-num{
+        font-size: 3rem;
+    }
+
+    .reset-btn{
+        margin-top: auto;
+    }
+}

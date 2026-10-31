@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tip calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="logo-section">
+        <h1><img src="assets/logo.svg" alt="Splitter"></h1>
+    </header>
+
+    <main class="bill-section">
+        <div class="bill">
+            <div class="bill-input">
+                <label for="price">Bill</label>
+                <input type="text" inputmode="decimal" name="bill" id="price" placeholder="0" class="input-dollar">
+            </div>
+
+            <fieldset class="tip">
+                <legend>Select Tip %</legend>
+                <div class="buttons">
+                    <button type="button" value="5">5%</button>
+                    <button type="button" value="10">10%</button>
+                    <button type="button" value="15">15%</button>
+                    <button type="button" value="25">25%</button>
+                    <button type="button" value="50">50%</button>
+                    <input type="text" inputmode="numeric" placeholder="Custom" id="custom-tip" class="custom"
+                        aria-label="Custom tip percentage">
+                </div>
+            </fieldset>
+
+            <div class="people">
+                <div class="numOfPeople-label">
+                    <label for="numOfPeople">Number of People</label>
+                    <span class="error-message" id="input-error"></span>
+                </div>
+                <input type="text" inputmode="numeric" name="numOfPeople" id="numOfPeople" placeholder="0"
+                    class="input-person" aria-describedby="input-error">
+            </div>
+        </div>
+        <div class="amount">
+            <div class="total-amount" aria-live="polite">
+                <div class="tip-amount">
+                    <div>
+                        <span class="result-title">Tip Amount</span>
+                        <span class="person">/ person</span>
+                    </div>
+                    <span class="amount-num" id="result-one">&dollar;0.00</span>
+                </div>
+                <div class="total">
+                    <div>
+                        <span class="result-title">Total</span>
+                        <span class="person">/ person</span>
+                    </div>
+                    <span class="amount-num" id="result-two">&dollar;0.00</span>
+
+                </div>
+                <button type="button" class="reset-btn" id="resetBtn" disabled>RESET</button>
+            </div>
+        </div>
+    </main>
+    <script src="index.js"></script>
+</body>
+
+</html>
